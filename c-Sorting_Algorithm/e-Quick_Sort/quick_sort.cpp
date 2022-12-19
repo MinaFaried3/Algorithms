@@ -65,7 +65,7 @@ int partition(int arr[], int low, int high)
         }
     }
     swap(arr[prevIdx + 1], arr[high]);
-    return (prevIdx + 1);
+    return (prevIdx + 1); // last updated place of current num
 }
 
 /* The main function that implements QuickSort
