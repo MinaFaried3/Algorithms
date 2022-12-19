@@ -111,17 +111,30 @@ it will take only O(n) not o(n^2)
 */
 void optimizedBubbleSortRecursive(int arr[], int size)
 {
-    if (size == 0 || size == 1)
+    if (size == 1)
         return;
 
+    int count = 0;
+
+    // One pass of bubble sort. After
+    // this pass, the largest element
+    // is moved (or bubbled) to end.
     for (int i = 0; i < size - 1; i++)
     {
         if (arr[i] > arr[i + 1])
         {
             swap(arr[i], arr[i + 1]);
+            count++;
         }
     }
 
+    // Check if any recursion happens or not
+    // If any recursion is not happen then return
+    if (count == 0) // array is sorted
+        return;
+
+    // Largest element is fixed,
+    // recur for remaining array
     optimizedBubbleSortRecursive(arr, size - 1);
 }
 int main()
