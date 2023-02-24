@@ -41,6 +41,13 @@ int numIDX = 0;
     cin.tie(NULL);                    \
     cout.tie(NULL);
 
+/*
+    ?notice: this
+    mid formula
+        * 1 - start + (end - start) / 2 = (end + start) /2
+        * 2 - start + (end - start + 1) / 2
+*/
+
 // * 1 - find first element in array
 //   0 1 2 3 4 4 4 4 4 5 6 8 8 => find first [4]
 int findFirstBinarySearch(int arr[], int size, int num)
@@ -49,6 +56,7 @@ int findFirstBinarySearch(int arr[], int size, int num)
     int end = size - 1;
     int mid;
 
+    //?notice (start <= end) will make the loop infinitely
     while (start < end)
     {
         mid = (start + end) / 2;
@@ -86,7 +94,25 @@ int findLastBinarySearch(int arr[], int size, int num)
     return start;
 }
 //-----------------------------------------------------------
+// * 3 - double
 
+double doubleBinarySearch(double arr[], double size, double num, double EPS = 1e-10)
+{
+    double start = 0;
+    double end = size - 1;
+    int mid;
+    while (fabs(end - start) > EPS)
+    {
+        mid = (start + end) / 2;
+        if (num > arr[mid])
+            start = mid;
+        else
+            end = mid;
+    }
+    return start;
+}
+
+//-----------------------------------------------------------
 int main()
 {
     const int size = 15;
