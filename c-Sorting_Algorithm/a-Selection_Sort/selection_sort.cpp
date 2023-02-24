@@ -47,7 +47,7 @@ void printArr(int arr[], int size)
 
 int findMinNumber(int arr[], int start, int end)
 {
-    int minIndex = INT32_MAX;
+    int minIndex = start;
 
     for (int i = start; i < end; i++)
     {
