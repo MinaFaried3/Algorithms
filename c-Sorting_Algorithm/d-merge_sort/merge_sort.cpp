@@ -121,7 +121,7 @@ int main()
     cout << "Given array is \n";
     printArr(arr, arr_size);
 
-    mergeSort(arr, 0, arr_size - 1);
+    mergeSort(arr, 0, arr_size - 1); //last index
 
     cout << "\nSorted array is \n";
     printArr(arr, arr_size);
